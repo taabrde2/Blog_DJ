@@ -1,4 +1,4 @@
-<?php  
+<?php
   session_start();
   require_once("include/functions.php");
   require_once("include/functions_db.php");
@@ -14,6 +14,10 @@
   // Prüfung, ob bereits ein Blog ausgewählt worden ist
   if (isset($_GET['bid'])) $blogId = $_GET['bid'];
   else $blogId = 0;
+
+  // Variablen Definierung
+
+  $nameB = getUserName();
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -38,7 +42,7 @@
   <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
       <div class="navbar-header">
-		<a class="navbar-brand"><?php echo "Blog (Namen einsetzen...)"; ?></a>
+		<a class="navbar-brand"><?php echo "Blog $nameB"; ?></a>
       </div>
       <ul class="nav navbar-nav">
 		<?php
