@@ -40,8 +40,6 @@
    Rückgabe:	 2-dimensionales Array, 
 				 - 1. Dimension = Benutzer
 				 - 2. Dimension = Attribute des Benutzers
-					* Name, falls vorhanden (NULL-Wert möglich)
-					* Mailadresse, falls Name = NULL
    Sortierung:	 1. nach Name und 2. nach Mailadresse
    ************************************************************************************************/
   function getUserNames() {
@@ -49,9 +47,7 @@
 	$db = getValue('cfg_db');
 	$users = $db->query("SELECT uid, name, email FROM user ORDER BY name, email");
 	while ($user = $users->fetchArray()) {
-	  if (strlen($user[1]) > 0) $name = $user[1];
-	  else $name = $user[2];
-	  $alle[] = array($user[0], $name);
+	  $alle[] = $user;
 	}
 	return $alle;
   }

@@ -1,4 +1,4 @@
-<?php  
+<?php
   session_start();
   require_once("include/functions.php");
   require_once("include/functions_db.php");
@@ -10,7 +10,7 @@
   setValue("cfg_db", $db);
   // Einfacher Dispatcher: Aufruf der Funktionen via index.php?function=xy
   if (isset($_GET['function'])) $function = $_GET['function'];
-  else $function = "login";
+  else $function = "";
   // Prüfung, ob bereits ein Blog ausgewählt worden ist
   if (isset($_GET['bid'])) $blogId = $_GET['bid'];
   else $blogId = 0;
@@ -38,13 +38,13 @@
   <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
       <div class="navbar-header">
-		<a class="navbar-brand"><?php echo "Blog (Namen einsetzen...)"; ?></a>
+		<a class="navbar-brand"><?php echo "Blog ".getUserName($blogId); ?></a>
       </div>
       <ul class="nav navbar-nav">
 		<?php
 		  echo "<li><a href='index.php?function=login&bid=$blogId'>Login</a></li>";
 		  echo "<li><a href='index.php?function=blogs&bid=$blogId'>Blog wählen</a></li>";
-		  echo "<li><a href='index.php?function=entries_login&bid=$blogId'>Beiträge anzeigen</a></li>";
+		  echo "<li><a href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a></li>";
 		?>
       </ul>
 	</div>
