@@ -14,6 +14,10 @@
   // Prüfung, ob bereits ein Blog ausgewählt worden ist
   if (isset($_GET['bid'])) $blogId = $_GET['bid'];
   else $blogId = 0;
+
+  // Variablen Definierung
+
+  $nameB = getUserName();
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -38,7 +42,11 @@
   <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
       <div class="navbar-header">
+<<<<<<< HEAD
 		<a class="navbar-brand"><?php echo "Blog ".getUserName($blogId); ?></a>
+=======
+		<a class="navbar-brand"><?php echo "Blog $nameB"; ?></a>
+>>>>>>> c0db7ddad8fbb3be816fca95eb0e19613b8f1116
       </div>
       <ul class="nav navbar-nav">
 		<?php
