@@ -15,9 +15,12 @@
   if (isset($_GET['bid'])) $blogId = $_GET['bid'];
   else $blogId = 0;
 
+  if (isset($_GET['eid'])) $EntryId = $_GET['eid'];
+  else $EntryId = 0;
+
   // Variablen Definierung
 
-  $nameB = getUserName();
+//  $nameB = getUserName();
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -28,6 +31,7 @@
 -->
   <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
   <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/custom_style.css" rel="stylesheet" />
   <script src="js/jquery-3.1.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="include/functions.js"></script>
@@ -42,11 +46,7 @@
   <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
       <div class="navbar-header">
-<<<<<<< HEAD
 		<a class="navbar-brand"><?php echo "Blog ".getUserName($blogId); ?></a>
-=======
-		<a class="navbar-brand"><?php echo "Blog $nameB"; ?></a>
->>>>>>> c0db7ddad8fbb3be816fca95eb0e19613b8f1116
       </div>
       <ul class="nav navbar-nav">
 		<?php

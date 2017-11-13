@@ -16,9 +16,9 @@
 	<?php $blogs= getUserNames();
 
 	 foreach ($blogs as $blog) {
-		echo '<div class="users"><a href="index.php?function=blogs&bid=';
+		echo '<div class="btn btn-primary"><a href="index.php?function=entries_public&bid=';
 		echo $blog['uid'];
-		echo '">';
+		echo '" title="Blog auswählen">';
 		echo $blog['name'];
 		echo '</a></div>';
 	} ?>
