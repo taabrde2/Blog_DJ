@@ -9,7 +9,9 @@
           <img class="card-img-top" src="./images/martin.jpg" alt="Card image cap" style="width:50px;">
           <div class="card-body"><h4 "card-title">';
     echo $beitraeg['title'];
-    echo '</h4><p class="card-text">';
+    echo '</h4><p class="card-text"><p>';
+    echo date('d.m.Y',$beitraeg['datetime']);
+    echo '</p>';
 
     $string = preg_replace("/[^ ]*$/", '', substr($beitraeg['content'], 0, 200));
     $punktpunktpunkt = '...';

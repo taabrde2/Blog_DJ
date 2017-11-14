@@ -11,3 +11,8 @@
 .card {
   margin: 5px;
 }
+
+.Fehlermeldung {
+  color: #FF0000;
+  background-color: aqua;
+}
