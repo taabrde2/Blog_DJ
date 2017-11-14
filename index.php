@@ -18,6 +18,8 @@
   if (isset($_GET['eid'])) $EntryId = $_GET['eid'];
   else $EntryId = 0;
 
+  // if (isset($_SESSION));
+
   // Variablen Definierung
 
 //  $nameB = getUserName();
@@ -53,6 +55,11 @@
 		  echo "<li><a href='index.php?function=login&bid=$blogId'>Login</a></li>";
 		  echo "<li><a href='index.php?function=blogs&bid=$blogId'>Blog wählen</a></li>";
 		  echo "<li><a href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a></li>";
+      if(isset($_SESSION['uid'])){
+      echo "<li><a href='index.php?function=entries_member&bid=".$_SESSION['uid']."'>Meine Blogs</a></li>";
+      echo "<li><a href='index.php?function=logout&bid=$blogId'>Logout</a></li>";
+      }
+
 		?>
       </ul>
 	</div>

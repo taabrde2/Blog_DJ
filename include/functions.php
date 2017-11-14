@@ -17,4 +17,5 @@
 	if (isset($_SESSION['uid'])) return $_SESSION['uid'];
 	else return 0;
   }
+
 ?>
