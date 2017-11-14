@@ -1,6 +1,11 @@
 <?php
   // Alle Blogeinträge holen, die Blog-ID ist in der Variablen $blogId gespeichert (wird in index.php gesetzt)
   // Hier Code... (Schlaufe über alle Einträge dieses Blogs)
+
+  if(getUserIdFromSession() == 0) {
+    header('Location: index.php?function=login&bid='.$blogId);
+  }
+
 $Entry = getEntry($EntryId);
 
 
@@ -27,5 +32,19 @@ echo $Entry['content'];
 echo '<p/>
     </div>
   </div>';
+
   // Nachfolgend das Beispiel einer Ausgabe in HTML, dieser Teil muss mit einer Schlaufe über alle Blog-Beiträge und der Ausgabe mit PHP ersetzt werden
 ?>
+
+<div class="Kommentare">
+  <h4>Kommentare</h4>
+<ul>
+  <?php
+  foreach(){
+    
+  }
+  ?>
+</ul>
+
+
+</div>

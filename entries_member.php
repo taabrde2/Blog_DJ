@@ -19,13 +19,26 @@ foreach($beitraege as $beitraeg) {
   $string .= $punktpunktpunkt;
   echo $string;
   echo '</p>';
-  echo '<a href="index.php?function=entries_public_details&bid=';
+  echo '<a href="index.php?function=entries_member_details&bid=';
   echo $_SESSION['uid'];
   echo '&eid=';
   echo $beitraeg['eid'];
   echo '" class="btn btn-primary">Go to the Description</a>
-          </div>
           </div>';
+
+  echo '<a href="index.php?function=entries_member_delete&bid=';
+  echo $_SESSION['uid'];
+  echo '&eid=';
+  echo $beitraeg['eid'];
+  echo '" class="btn btn-primary">Delete Entry</a>';
+
+  echo '<a href="index.php?function=entries_member_edit&bid=';
+  echo $_SESSION['uid'];
+  echo '&eid=';
+  echo $beitraeg['eid'];
+  echo '" class="btn btn-primary">Edit Entry</a>';
+
+  echo  '</div>';
 }
 
 ?>
