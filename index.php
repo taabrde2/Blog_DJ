@@ -43,7 +43,7 @@
   nav, div und ul class="..." ist Bootstrap, falls nicht gewünscht entfernen oder anpassen.
   Die Einteilung der Website in verschiedene Bereiche (Menü-, Content-Bereich, usw.) kann auch selber mit div realisiert werden.
 -->
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-inverse bg-inverse">
 	<div class="container">
       <div class="navbar-header">
 		<a class="navbar-brand"><?php echo "Blog ".getUserName($blogId); ?></a>
@@ -58,12 +58,15 @@
       if(isset($_SESSION['uid'])){
       echo "<li><a href='index.php?function=entries_member&bid=".$_SESSION['uid']."'>Meine Blogs</a></li>";
       echo "<li><a href='index.php?function=entries_member_create&bid=".$_SESSION['uid']."'>Blog Eintrag erfassen</a></li>";
+      echo "<li><a href='index.php?function=Import_Export.php&bid=".$_SESSION['uid']."'>Import/Export</a></li>";
       echo "<li><a href='index.php?function=logout&bid=$blogId'>Logout</a></li>";
       }
 
 		?>
       </ul>
+
 	</div>
+
   </nav>
   <div class="container" style="margin-top:80px">
   <?php
