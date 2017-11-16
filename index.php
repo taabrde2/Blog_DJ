@@ -18,8 +18,6 @@
   if (isset($_GET['eid'])) $EntryId = $_GET['eid'];
   else $EntryId = 0;
 
-  // if (isset($_SESSION));
-
   // Variablen Definierung
   $updateValues = array();
 

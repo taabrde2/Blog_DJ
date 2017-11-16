@@ -3,6 +3,11 @@
   color: white;
 }
 
+.btn-primary a:after {
+  text-decoration: none;
+  color: red;
+}
+
 .btn-primary {
   margin: 3px;
   float: left;
@@ -17,4 +22,10 @@
 }
 .btnComment{
   margin-top: 10px;
+}
+
+
+.btn-danger a {
+  text-decoration: none;
+  color: white;
 }
