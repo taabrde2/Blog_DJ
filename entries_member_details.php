@@ -6,10 +6,8 @@
     header('Location: index.php?function=login&bid='.$blogId);
   }
 
-$Comments = getComments($EntryId);
-
 $Entry = getEntry($EntryId);
-
+$Comments = getComments($EntryId);
 
 echo ' <div class="Entry">
     <div class="title">
@@ -26,7 +24,7 @@ echo '</h1>
 
 echo '</p>
     </div>
-    <div class="clontent">
+    <div class="content">
       <p>';
 
 echo $Entry['content'];
@@ -35,32 +33,35 @@ echo '<p/>
     </div>
   </div>';
 
-if(!empty($_POST['title']) & !empty($_POST['content'])){
-  // hier kommt noch die Funktion zum erfassen eines Kommentares hin. 
 
-
-
-}
 
   // Nachfolgend das Beispiel einer Ausgabe in HTML, dieser Teil muss mit einer Schlaufe über alle Blog-Beiträge und der Ausgabe mit PHP ersetzt werden
 ?>
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']."?function=entries_member_create&bid=".$_SESSION['uid']."&eid=".$EntryId;?>">
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']."?function=entries_member_createComment&bid=".$_SESSION['uid']."&eid=".$EntryId;?>">
   <div class="Kommentare">
     <h4>Kommentare</h4>
   <ul>
     <?php
     foreach($Comments as $Comment){
-      echo '<li><p>'.$Comment['content'].'</p><small>'.date('d.m.Y',$Comment['datetime']).'</small>';
+      echo '<li class="commentsCardLi"><div class="commentsCard"><p>'.$Comment['content'].'</p><small>'.date('d.m.Y',$Comment['datetime']).' '.$Comment['name'].'</small><br/>';
+      if($_SESSION['uid'] == $blogId){
+        echo '<a class="btn btn-primary" href="index.php?function=entries_member_deleteComment&bid='.$_SESSION['uid']."&eid=".$EntryId."&cid=".$Comment['cid'].'">Delete Comment</a>';
+      }
+      echo '</div></li><br/>';
     }
     ?>
   </ul>
   <div class="addComment">
-    <label for="commentTitle">Titel</label>
-    <input type="text" id="commentTitle" name="title"><br/>
-    <label for="commentContent">Kommentar</label>
+    <h4>Neuer Kommentar</h4>
+    <label id="labelTitle" for="commentTitle">Titel</label>
+    <input type="text" id="commentTitle" name="name"><br/>
+    <label id="labelContent" for="commentContent">Kommentar</label>
     <input type="text" id="commentCreate" name="content">
+    <a></a>
   </div>
   <div class="btnComment">
     <button type="submit" class="btn btn-primary">Kommentar erfassen</button>
   </div>
 </form>
+
+<?php echo "<a href=\"javascript:history.go(-1)\">zurück</a>";?>

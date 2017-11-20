@@ -37,3 +37,5 @@ header('Location: index.php?function=entries_member&bid='.$_SESSION['uid']);
    </div>
    <button type="submit" class="btn btn-primary">Beitrag erstellen</button>
  </form>
+
+<?php echo "<a href=\"javascript:history.go(-1)\">zurück</a>";?>

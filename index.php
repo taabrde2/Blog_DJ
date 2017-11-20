@@ -18,6 +18,10 @@
   if (isset($_GET['eid'])) $EntryId = $_GET['eid'];
   else $EntryId = 0;
 
+  if (isset($_GET['cid'])) $CommentId = $_GET['cid'];
+  else $CommentId = 0;
+
+
   // Variablen Definierung
   $updateValues = array();
 
@@ -58,7 +62,7 @@
       if(isset($_SESSION['uid'])){
       echo "<li><a href='index.php?function=entries_member&bid=".$_SESSION['uid']."'>Meine Blogs</a></li>";
       echo "<li><a href='index.php?function=entries_member_create&bid=".$_SESSION['uid']."'>Blog Eintrag erfassen</a></li>";
-      echo "<li><a href='index.php?function=Import_Export.php&bid=".$_SESSION['uid']."'>Import/Export</a></li>";
+      echo "<li><a href='index.php?function=Import_Export&bid=".$_SESSION['uid']."'>Import/Export</a></li>";
       echo "<li><a href='index.php?function=logout&bid=$blogId'>Logout</a></li>";
       }
 
