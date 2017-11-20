@@ -50,7 +50,7 @@
   <nav class="navbar navbar-inverse bg-inverse">
 	<div class="container">
       <div class="navbar-header">
-		<a class="navbar-brand"><?php echo "Blog ".getUserName($blogId); ?></a>
+		<a href='index.php?function=blogs&bid=$blogId' class="navbar-brand"><?php echo "Blog ".getUserName($blogId); ?></a>
       </div>
       <ul class="nav navbar-nav">
 		<?php

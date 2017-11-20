@@ -45,7 +45,7 @@ echo '<p/>
     foreach($Comments as $Comment){
       echo '<li class="commentsCardLi"><div class="commentsCard"><p>'.$Comment['content'].'</p><small>'.date('d.m.Y',$Comment['datetime']).' '.$Comment['name'].'</small><br/>';
       if($_SESSION['uid'] == $blogId){
-        echo '<a class="btn btn-primary" href="index.php?function=entries_member_deleteComment&bid='.$_SESSION['uid']."&eid=".$EntryId."&cid=".$Comment['cid'].'">Delete Comment</a>';
+        echo '<a class="btn btn-primary" onclick="return confirmDeleteComment();" href="index.php?function=entries_member_deleteComment&bid='.$_SESSION['uid']."&eid=".$EntryId."&cid=".$Comment['cid'].'">Delete Comment</a>';
       }
       echo '</div></li><br/>';
     }
@@ -53,10 +53,10 @@ echo '<p/>
   </ul>
   <div class="addComment">
     <h4>Neuer Kommentar</h4>
-    <label id="labelTitle" for="commentTitle">Titel</label>
-    <input type="text" id="commentTitle" name="name"><br/>
     <label id="labelContent" for="commentContent">Kommentar</label>
-    <input type="text" id="commentCreate" name="content">
+    <textarea row="50" cols="80" type="text" id="commentCreate" name="content"></textarea><br/>
+    <label id="labelTitle" for="commentTitle">Name</label>
+    <input type="text" placeholder="Erfasser/In" id="commentTitle" name="name">
     <a></a>
   </div>
   <div class="btnComment">
@@ -64,4 +64,4 @@ echo '<p/>
   </div>
 </form>
 
-<?php echo "<a href=\"javascript:history.go(-1)\">zurück</a>";?>
+<?php echo '<a class="btn btn-default" href="index.php?function=entries_member&bid='.$_SESSION['uid'].'&eid='.$EntryId.'">zurück</a>';?>

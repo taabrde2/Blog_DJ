@@ -33,4 +33,4 @@
   // Nachfolgend das Beispiel einer Ausgabe in HTML, dieser Teil muss mit einer Schlaufe über alle Blog-Beiträge und der Ausgabe mit PHP ersetzt werden
 ?>
 
-<?php echo "<a href=\"javascript:history.go(-1)\">zurück</a>";?>
+<?php echo '<a class="btn btn-default" href="index.php?function=blogs&bid='.$blogId.'&eid='.$EntryId.'">zurück</a>';?>

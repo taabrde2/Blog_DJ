@@ -30,7 +30,7 @@ echo '<p/>
   // Nachfolgend das Beispiel einer Ausgabe in HTML, dieser Teil muss mit einer Schlaufe über alle Blog-Beiträge und der Ausgabe mit PHP ersetzt werden
 ?>
 
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']."?function=entries_public_createComment&bid=".$_SESSION['uid']."&eid=".$EntryId;?>">
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']."?function=entries_public_createComment&bid=".$blogId."&eid=".$EntryId;?>">
   <div class="Kommentare">
     <h4>Kommentare</h4>
   <ul>
@@ -38,7 +38,7 @@ echo '<p/>
     foreach($Comments as $Comment){
       echo '<li class="commentsCardLi"><div class="commentsCard"><p>'.$Comment['content'].'</p><small>'.date('d.m.Y',$Comment['datetime']).' '.$Comment['name'].'</small><br/>';
       if(isset($_SESSION['uid']) && $_SESSION['uid'] == $blogId){
-        echo '<a class="btn btn-primary" href="index.php?function=entries_member_deleteComment&bid='.$_SESSION['uid']."&eid=".$EntryId."&cid=".$Comment['cid'].'">Delete Comment</a>';
+        echo '<a class="btn btn-primary" href="index.php?function=entries_member_deleteComment&bid='.$blogId."&eid=".$EntryId."&cid=".$Comment['cid'].'" onclick="return confirmDeleteComment();">Delete Comment</a>';
       }
       echo '</div></li><br/>';
     }
@@ -49,9 +49,9 @@ echo '<p/>
   echo '<div class="addComment">
     <h4>Neuer Kommentar</h4>
     <label id="labelContent" for="commentContent">Kommentar</label>
-    <input type="text" id="commentCreate" name="content"><br/>
+    <textarea row="50" cols="80" placeholder="Kommentar" type="text" id="commentCreate" name="content"></textarea><br/>
     <label id="labelTitle" for="commentTitle">Name</label>
-    <input type="text" id="commentTitle" name="name">
+    <input type="text" placeholder="Erfasser/In" id="commentTitle" name="name">
     <a></a>
   </div>
   <div class="btnComment">
@@ -63,4 +63,4 @@ echo '<p/>
   ?>
 </form>
 
-<?php echo "<a href=\"javascript:history.go(-1)\">zurück</a>";?>
+<?php echo '<a class="btn btn-default" href="index.php?function=entries_public&bid='.$blogId.'&eid='.$EntryId.'">zurück</a>';?>

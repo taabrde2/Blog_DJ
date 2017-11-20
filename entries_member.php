@@ -19,26 +19,9 @@ foreach($beitraege as $beitraeg) {
   $string .= $punktpunktpunkt;
   echo $string;
   echo '</p>';
-  echo '<a href="index.php?function=entries_member_details&bid=';
-  echo $_SESSION['uid'];
-  echo '&eid=';
-  echo $beitraeg['eid'];
-  echo '" class="btn btn-primary">Go to the Description</a>
-          </div>';
-
-  echo '<a href="index.php?function=entries_member_delete&bid=';
-  echo $_SESSION['uid'];
-  echo '&eid=';
-  echo $beitraeg['eid'];
-  echo '" class="btn btn-primary">Delete Entry</a>';
-
-  echo '<a href="index.php?function=entries_member_edit&bid=';
-  echo $_SESSION['uid'];
-  echo '&eid=';
-  echo $beitraeg['eid'];
-  echo '" class="btn btn-primary">Edit Entry</a>';
-
-  echo  '</div>';
+  echo '<a href="index.php?function=entries_member_details&bid='.$_SESSION['uid'].'&eid='.$beitraeg['eid'].'"><div class="btn btn-primary">Go to the Description</div></a></div>';
+  echo '<a href="index.php?function=entries_member_delete&bid='.$_SESSION['uid'].'&eid='.$beitraeg['eid'].'" onclick="return confirmDeleteEntry();" class="btn btn-primary">Delete Entry</a>';
+  echo '<a href="index.php?function=entries_member_edit&bid='.$_SESSION['uid'].'&eid='.$beitraeg['eid'].'" class="btn btn-primary">Edit Entry</a>'.'</div>';
 }
 
 ?>
