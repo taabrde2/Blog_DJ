@@ -32,5 +32,3 @@
 
   // Nachfolgend das Beispiel einer Ausgabe in HTML, dieser Teil muss mit einer Schlaufe über alle Blog-Beiträge und der Ausgabe mit PHP ersetzt werden
 ?>
-
-<?php echo '<a class="btn btn-default" href="index.php?function=blogs&bid='.$blogId.'&eid='.$EntryId.'">zurück</a>';?>

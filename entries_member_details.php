@@ -63,5 +63,3 @@ echo '<p/>
     <button type="submit" class="btn btn-primary">Kommentar erfassen</button>
   </div>
 </form>
-
-<?php echo '<a class="btn btn-default" href="index.php?function=entries_member&bid='.$_SESSION['uid'].'&eid='.$EntryId.'">zurück</a>';?>

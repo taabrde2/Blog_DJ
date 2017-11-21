@@ -49,10 +49,10 @@
     <p><?php echo $meldung; ?></p>
   </div>
   <div class="form-check">
-    <label class="form-check-label">
+    <!-- <label class="form-check-label">
       <input type="checkbox" class="form-check-input">
       Check me out
-    </label>
+    </label> -->
   </div>
   <button type="submit" class="btn btn-primary">Login</button>
 </form>

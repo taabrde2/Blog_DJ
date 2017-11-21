@@ -17,7 +17,7 @@
 
 	 foreach ($blogs as $blog) {
 		 if($blog['uid'] == $blogId){
-			 echo '<div class="btn btn-danger"><a href="index.php?function=entries_public&bid=';
+			 echo '<div class="btn btn-danger btnBlogs"><a href="index.php?function=entries_public&bid=';
 			 echo $blog['uid'];
 			 echo '" title="Blog auswählen">';
 			 echo $blog['name'];
@@ -25,7 +25,7 @@
 		 }
 		 else
 		 {
-			 echo '<div class="btn btn-primary"><a href="index.php?function=entries_public&bid=';
+			 echo '<div class="btn btn-primary btnBlogs"><a href="index.php?function=entries_public&bid=';
 			 echo $blog['uid'];
 			 echo '" title="Blog auswählen">';
 			 echo $blog['name'];
