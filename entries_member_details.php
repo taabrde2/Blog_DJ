@@ -53,9 +53,9 @@ echo '<p/>
   </ul>
   <div class="addComment">
     <h4>Neuer Kommentar</h4>
-    <label id="labelContent" for="commentContent">Kommentar</label>
-    <textarea row="50" cols="80" type="text" id="commentCreate" name="content"></textarea><br/>
-    <label id="labelTitle" for="commentTitle">Name</label>
+    <label id="labelContent" for="commentContent">Kommentar</label><br/>
+    <textarea row="50" cols="80" type="text" placeholder="Kommentar" id="commentCreate" name="content"></textarea><br/>
+    <label id="labelTitle" for="commentTitle">Name</label><br/>
     <input type="text" placeholder="Erfasser/In" id="commentTitle" name="name">
     <a></a>
   </div>
