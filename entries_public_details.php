@@ -3,7 +3,6 @@
 $Entry = getEntry($EntryId);
 $Comments = getComments($EntryId);
 
-
 echo ' <div class="Entry">
     <div class="title">
       <h1>';
@@ -22,7 +21,7 @@ echo '</p>
     <div class="clontent">
       <p>';
 
-echo $Entry['content'];
+echo nl2br($Entry['content']);
 
 echo '<p/>
     </div>
@@ -57,8 +56,6 @@ echo '<p/>
   <div class="btnComment">
     <button type="submit" class="btn btn-primary">Kommentar erfassen</button>
   </div>';
-
-
 
   ?>
 </form>
