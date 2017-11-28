@@ -45,6 +45,9 @@
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
     <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
   </div>
+  <div>
+    <p>Noch kein Login? <a  <?php echo 'href="index.php?function=registrieren&bid='.$blogId.'"';  ?>>Registriere dich hier!</a><p>
+  </div>
   <div class ="Fehlermeldung">
     <p><?php echo $meldung; ?></p>
   </div>
