@@ -102,3 +102,12 @@ div.card {
     text-decoration: none;
     color: #9d9d9d;
 }
+
+.nav-Disable {
+    color: aqua;
+}
+
+.nav-Disable-a:hover{
+    color: grey;
+    text-decoration: none;
+}
