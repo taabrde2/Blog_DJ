@@ -14,22 +14,26 @@ if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['passwort']) 
   }
 }
 else{
+
   $name = $_POST['name'];
   $email = $_POST['email'];
   $passwort = $_POST['passwort'];
   $RPpasswort = $_POST['RPpasswort'];
   $role = 1;
 
-    if($passwort == $RPpasswort){
+    if($passwort != $RPpasswort){
 
+      $meldung = "Bitte geben Sie zweimal das gleiche Passwort ein!";
+    }
+    elseif (!userExists($email)) {
+        $meldung = "Email bereits vorhanden!";
+    }
+    else
+    {
       $passwort = md5($passwort);
       addUser($name,$email,$passwort,$role);
 
       header('Location: index.php?function=login&bid='.$blogId);
-    }
-    else
-    {
-      $meldung = "Bitte geben Sie zweimal das gleiche Passwort ein!";
     }
 }
 ?>

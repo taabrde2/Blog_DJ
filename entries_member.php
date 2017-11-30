@@ -7,8 +7,8 @@ $beitraege = getEntries($_SESSION['uid']);
 
 foreach($beitraege as $beitraeg) {
   echo '<div class="card" style="width: 20rem; float:left;">
-        <img class="card-img-top" src="./images/martin.jpg" alt="Card image cap" style="width:50px;">
         <div class="card-body"><h4 "card-title">';
+        // <img class="card-img-top" src="./images/martin.jpg" alt="Card image cap" style="width:50px;">
   echo $beitraeg['title'];
   echo '</h4><p class="card-text"><p>';
   echo date('d.m.Y',$beitraeg['datetime']);
