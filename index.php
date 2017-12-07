@@ -60,7 +60,7 @@
       }
       echo "<li><a href='index.php?function=blogs&bid=$blogId'>Blog wählen</a></li>";
       if(!isset($blogId) || $blogId == 0){
-      echo "<li class='nav-Disable'><a class='nav-Disable-a'>Beiträge anzeigen</a></li>";  
+      echo "<li class='nav-Disable'>Beiträge anzeigen</li>";  
       }else{
       echo "<li><a href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a></li>";
       }

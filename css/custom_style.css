@@ -105,9 +105,38 @@ div.card {
 
 .nav-Disable {
     color: aqua;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.nav-Disable-a:hover{
-    color: grey;
-    text-decoration: none;
+
+.nav-Disable a:hover{
+  background-color: aqua;
+  color: grey;
+  text-decoration: none;
 }
+
+.navbar-inverse .navbar-nav>.nav-Disable {
+    color: #9d9d9d;
+}
+
+@media (min-width: 768px)
+.navbar-nav>.nav-Disable {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-nav>.nav-Disable {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+}
+
+.nav>.nav-Disable {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
