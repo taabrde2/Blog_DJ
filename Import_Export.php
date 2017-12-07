@@ -7,7 +7,7 @@ elseif($UserRole != 2){
 }
  ?>
 
-<button style="width:100px; height:100px;" action="<?php echo $_SERVER['PHP_SELF']."?function=uploadToServer&bid=".$blogId;?>" type="button" name="button"></button>
+<button style="width:100px; height:100px;" action="<?php "index.php?function=uploadToServer&bid=".$blogId;?>" type="button" name="button"></button>
 
 
 
