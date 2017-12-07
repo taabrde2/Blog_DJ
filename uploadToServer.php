@@ -12,7 +12,7 @@ while($zeile = fgets($fp, 1024)){
   $pw = $spalten[2];
 
   if (!empty($name) || !empty($email) || !empty($pw)){
-    //addUser($name,$email,$pw,1);
+    addUser($name,$email,$pw,1);
   }
 }
 fclose($fp);
