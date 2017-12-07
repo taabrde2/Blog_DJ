@@ -1,4 +1,4 @@
-<?php $fp = @fopen("exchange/import/import.csv", "r") or die ("Datei nicht lesbar.");
+<?php $fp = @fopen("exchange/import/test.csv", "r") or die ("Datei nicht lesbar.");
 while($zeile = fgets($fp, 1024)){
   $spalten = explode(";", $zeile);
   // echo '<a href=" '.$spalten[0].' ">'.$spalten[0].'</a><br>';
