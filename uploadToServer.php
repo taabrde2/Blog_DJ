@@ -13,6 +13,8 @@ while($zeile = fgets($fp, 1024)){
 
   if (!empty($name) || !empty($email) || !empty($pw)){
     addUser($name,$email,$pw,1);
+  }else {
+    alert("kein File ausgewählt");
   }
 }
 fclose($fp);
