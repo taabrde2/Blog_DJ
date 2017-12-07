@@ -17,7 +17,7 @@
   /************************************************************************************************
    getUsers: Liefert alle registrierten Benutzer zurück
    Hinweis:	 Diese Funktion kann dazu benutzt werden, alle Benutzer in eine Textdatei zu exportieren
-   Rückgabe: 2-dimensionales Array, 
+   Rückgabe: 2-dimensionales Array,
 			 - 1. Dimension = Benutzer
 			 - 2. Dimension = Attribute des Benutzers
 				* User-ID
@@ -105,7 +105,7 @@
   /************************************************************************************************
    getComments:	Liefert alle Kommentare eines Blog-Beitrags zurück
    $eid:		Entry-ID des gewünschten Beitrags
-   Rückgabe:    2-dimensionales Array, 
+   Rückgabe:    2-dimensionales Array,
 			    - 1. Dimension = Kommentar
 			    - 2. Dimension = Attribute des Kommentars
 					* Comment-ID
@@ -164,7 +164,7 @@
   /************************************************************************************************
    getTopics:	Liefert alle Themen eines Benutzers zurück
    $uid:		User-ID des gewünschten Benutzers
-   Rückgabe:	2-dimensionales Array, 
+   Rückgabe:	2-dimensionales Array,
 				- 1. Dimension = Thema
 				- 2. Dimension = Attribute des Themas
 					* Topic-ID
@@ -253,4 +253,17 @@
 	  return $db->exec($sql);
 	} false;
   }
+
+
+  // Herauslesen der Role, die der USer hat.
+  function getUserRole($uid) {
+  $db = getValue('cfg_db');
+  $result = $db->query("SELECT uid, role FROM user WHERE uid=".$uid);
+  if ($user = $result->fetchArray()) {
+    if (strlen($user[0]) > 0) return $user[0];
+    else return $user[1];
+  } else return "";
+  }
+
+
 ?>

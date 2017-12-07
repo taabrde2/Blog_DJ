@@ -22,6 +22,12 @@
   else $CommentId = 0;
 
 
+  // Administrator
+  if (isset($_SESSION['uid']) || !empty($_SESSION['uid'])){
+    $UserRole = getUserRole($_SESSION['uid']);
+  }
+  
+
   // Variablen Definierung
   $updateValues = array();
 
@@ -60,7 +66,7 @@
       }
       echo "<li><a href='index.php?function=blogs&bid=$blogId'>Blog wählen</a></li>";
       if(!isset($blogId) || $blogId == 0){
-      echo "<li class='nav-Disable'>Beiträge anzeigen</li>";  
+      echo "<li class='nav-Disable'>Beiträge anzeigen</li>";
       }else{
       echo "<li><a href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a></li>";
       }

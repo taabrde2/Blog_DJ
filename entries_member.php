@@ -3,6 +3,7 @@ if(getUserIdFromSession() == 0) {
   header('Location: index.php?function=login&bid='.$blogId);
 }
 
+
 $beitraege = getEntries($_SESSION['uid']);
 
 foreach($beitraege as $beitraeg) {
