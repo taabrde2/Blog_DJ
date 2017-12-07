@@ -27,7 +27,7 @@ echo '</p>
     <div class="content">
       <p>';
 
-echo nl2br($Entry['content']);
+echo nl2br(htmlspecialchars($Entry['content']));
 
 echo '<p/>
     </div>
