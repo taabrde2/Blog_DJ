@@ -71,11 +71,18 @@
       echo "<li><a href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a></li>";
       }
       if(isset($_SESSION['uid'])){
-      echo "<li><a href='index.php?function=entries_member&bid=".$_SESSION['uid']."'>Meine Blogs</a></li>";
-      echo "<li><a href='index.php?function=entries_member_create&bid=".$_SESSION['uid']."'>Blog Eintrag erfassen</a></li>";
-      echo "<li><a href='index.php?function=Import_Export&bid=".$_SESSION['uid']."'>Import/Export</a></li>";
-      echo "<li><div class='dropdown'><span>Eingeloggt als: ".getUserName($_SESSION['uid'])."</span><div class='dropdown-content'><a href='index.php?function=logout&bid=$blogId'>Logout</a></div></li>";
-      echo "<li>";
+        if($UserRole == 2){
+          echo "<li><a href='index.php?function=Import_Export&bid=".$_SESSION['uid']."'>Import/Export</a></li>";
+          echo "<li><a href='index.php?function=blog_delete&bid=".$_SESSION['uid']."'>Blog Löschen</a></li>";
+          echo "<li><div class='dropdown'><span>Eingeloggt als: ".getUserName($_SESSION['uid'])."</span><div class='dropdown-content'><a href='index.php?function=logout&bid=$blogId'>Logout</a></div></li>";
+          echo "<li>";
+        }
+        else{
+          echo "<li><a href='index.php?function=entries_member&bid=".$_SESSION['uid']."'>Meine Blogs</a></li>";
+          echo "<li><a href='index.php?function=entries_member_create&bid=".$_SESSION['uid']."'>Blog Eintrag erfassen</a></li>";
+          echo "<li><div class='dropdown'><span>Eingeloggt als: ".getUserName($_SESSION['uid'])."</span><div class='dropdown-content'><a href='index.php?function=logout&bid=$blogId'>Logout</a></div></li>";
+          echo "<li>";
+        }
       switch ($function) {
         case 'entries_public':
             echo '<a class="btn btn-default btnZurueck" href="index.php?function=blogs&bid='.$blogId.'&eid='.$EntryId.'">zurück</a>';
