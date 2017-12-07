@@ -7,8 +7,8 @@ elseif($UserRole != 2){
 }
  ?>
 
-<a href="<?php "index.php?function=uploadToServer&bid=".$blogId;?>">Benutzer Erstellen</a>
 
+<a <?php echo 'href="index.php?function=uploadToServer&bid='.$blogId.'"'; ?>>Benutzer Erstellen</a>
 
 
 
