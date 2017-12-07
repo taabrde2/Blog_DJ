@@ -25,8 +25,10 @@
   // Administrator
   if (isset($_SESSION['uid']) || !empty($_SESSION['uid'])){
     $UserRole = getUserRole($_SESSION['uid']);
+
+    echo $UserRole;
   }
-  
+
 
   // Variablen Definierung
   $updateValues = array();

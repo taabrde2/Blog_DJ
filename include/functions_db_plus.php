@@ -258,7 +258,7 @@
   // Herauslesen der Role, die der USer hat.
   function getUserRole($uid) {
   $db = getValue('cfg_db');
-  $result = $db->query("SELECT uid, role FROM user WHERE uid=".$uid);
+  $result = $db->query("SELECT role FROM user WHERE uid=".$uid);
   if ($user = $result->fetchArray()) {
     if (strlen($user[0]) > 0) return $user[0];
     else return $user[1];
