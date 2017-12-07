@@ -7,7 +7,7 @@ elseif($UserRole != 2){
 }
  ?>
 
-<button style="width:100px; height:100px;" action="<?php "index.php?function=uploadToServer&bid=".$blogId;?>" type="button" name="button"></button>
+<a href="<?php "index.php?function=uploadToServer&bid=".$blogId;?>">Benutzer Erstellen</a>
 
 
 
