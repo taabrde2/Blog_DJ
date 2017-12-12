@@ -275,5 +275,9 @@
   } else return "";
   }
 
-
+  function delUser($uid) {
+	$db = getValue('cfg_db');
+	$sql = "DELETE FROM user WHERE uid = $uid";
+	return $db->exec($sql);
+  }
 ?>
