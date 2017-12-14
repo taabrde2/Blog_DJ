@@ -140,3 +140,15 @@ div.card {
 .nav>.nav-Disable{
     padding: 15px;
 }
+
+.Admin-Cards {
+  border-style: solid;
+  border-width: thin;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.btn-warning a {
+  text-decoration: none;
+  color: white;
+}

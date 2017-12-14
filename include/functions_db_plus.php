@@ -255,7 +255,7 @@
   }
 
 
-  // Herauslesen der Role, die der USer hat.
+  // Herauslesen der Role, die der User hat.
   function getUserRole($uid) {
   $db = getValue('cfg_db');
   $result = $db->query("SELECT role FROM user WHERE uid=".$uid);
@@ -265,5 +265,19 @@
   } else return "";
   }
 
+ // Gibt UID des Admin Users aus.
+  function getAdminUser() {
+  $db = getValue('cfg_db');
+  $result = $db->query("SELECT uid FROM user WHERE role='2'");
+  if ($user = $result->fetchArray()) {
+    if (strlen($user[0]) > 0) return $user[0];
+    else return $user[1];
+  } else return "";
+  }
 
+  function delUser($uid) {
+	$db = getValue('cfg_db');
+	$sql = "DELETE FROM user WHERE uid = $uid";
+	return $db->exec($sql);
+  }
 ?>

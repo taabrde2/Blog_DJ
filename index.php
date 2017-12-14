@@ -73,7 +73,6 @@
       if(isset($_SESSION['uid'])){
         if($UserRole == 2){
           echo "<li><a href='index.php?function=Import_Export&bid=".$_SESSION['uid']."'>Import/Export</a></li>";
-          echo "<li><a href='index.php?function=blog_delete&bid=".$_SESSION['uid']."'>Blog Löschen</a></li>";
           echo "<li><div class='dropdown'><span>Eingeloggt als: ".getUserName($_SESSION['uid'])."</span><div class='dropdown-content'><a href='index.php?function=logout&bid=$blogId'>Logout</a></div></li>";
           echo "<li>";
         }

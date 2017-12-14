@@ -1,10 +1,7 @@
 <?php
 
-if(getUserIdFromSession() == 0) {
-  header('Location: index.php?function=login&bid='.$blogId);
-}
 
-$Comments = getComments($EntryId);
+
 
 if(!empty($_POST['name']) & !empty($_POST['content'])){
   // hier kommt noch die Funktion zum erfassen eines Kommentares hin.

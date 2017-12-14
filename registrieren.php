@@ -20,12 +20,17 @@ else{
   $passwort = $_POST['passwort'];
   $RPpasswort = $_POST['RPpasswort'];
   $role = 1;
+  $userExists = userExists($email);
 
     if($passwort != $RPpasswort){
 
       $meldung = "Bitte geben Sie zweimal das gleiche Passwort ein!";
     }
-    elseif (!userExists($email)) {
+    elseif($passwort < 6){
+
+      $meldung = "Das Passwort sollte mindestens 6 Zeichen beinhalten!";
+    }
+    elseif ($userExists) {
         $meldung = "Email bereits vorhanden!";
     }
     else
