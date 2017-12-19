@@ -16,4 +16,5 @@ if(!empty($_POST['name']) & !empty($_POST['content'])){
   header('Location: index.php?function=entries_member_details&bid='.$_SESSION['uid'].'&eid='.$EntryId);
   //alert('Erledigt');
 }
+  header('Location: index.php?function=entries_member_details&bid='.$_SESSION['uid'].'&eid='.$EntryId);
 ?>
