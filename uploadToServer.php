@@ -13,9 +13,10 @@ while($zeile = fgets($fp, 1024)){
 
   if (!empty($name) || !empty($email) || !empty($pw)){
     addUser($name,$email,$pw,1);
-  }else {
-    alert("kein File ausgewählt");
+    echo "<img src='images/wbEgy.png' width='100%'>";
+
   }
 }
+
 fclose($fp);
  ?>
