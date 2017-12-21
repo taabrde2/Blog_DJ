@@ -12,4 +12,6 @@ if(!empty($_POST['name']) & !empty($_POST['content'])){
   header('Location: index.php?function=entries_public_details&bid='.$blogId.'&eid='.$EntryId);
   //alert('Erledigt');
 }
+
+header('Location: index.php?function=entries_public_details&bid='.$blogId.'&eid='.$EntryId);
 ?>
