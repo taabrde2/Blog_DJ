@@ -20,3 +20,5 @@ elseif($UserRole != 2){
 <a class="btn btn-primary"<?php echo 'href="index.php?function=uploadToServer&bid='.$blogId.'"'; ?>>Benutzer Erstellen</a>
 
 <a class="btn btn-primary"<?php echo 'href="index.php?function=export&bid='.$blogId.'"'; ?>>Export</a>
+
+<a class="btn btn-primary" href="exchange/export/export.csv">Download Users</a>
